@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('players/{id}', [App\Http\Controllers\GamePlayerController::class, 'players']);
+
+Route::get('playersAjax/{id}', [App\Http\Controllers\GamePlayerController::class, 'playersAjax']);
