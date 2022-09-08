@@ -15,8 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
-Route::get('players/{id}', [App\Http\Controllers\GamePlayerController::class, 'players']);
+Route::get('players/{idG}/{idP}', [App\Http\Controllers\GamePlayerController::class, 'players']);
 
 Route::get('playersAjax/{id}', [App\Http\Controllers\GamePlayerController::class, 'playersAjax']);
+
+Route::get('startGame/{id}', [App\Http\Controllers\GameController::class, 'startGame'])->name('startGame');
