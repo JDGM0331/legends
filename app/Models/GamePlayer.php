@@ -10,7 +10,7 @@ class GamePlayer extends Model
     use HasFactory;
 
     public function game(){
-        return $this->belongsTo(Game::class);
+        return $this->belongsTo(Game::class,'player_id');
     }
 
     public function player(){
@@ -18,6 +18,6 @@ class GamePlayer extends Model
     }
 
     public function playerCards(){
-        return $this->hasMany(PlayerCard::class); 
+        return $this->hasMany(PlayerCard::class);
     }
 }
